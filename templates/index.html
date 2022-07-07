@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block content%}
+
+<html>
+
+<body>
+    <h1>Events: </h1>
+    <div class="event-wrapper">
+        <div class="box">
+            {% for event in events %}
+            <ul class="events-boxes">
+                <li>{{event.name}}</li>
+                <li>{{event.date}}</li>
+                <li>{{event.number_of_guests}}</li>
+                <li>{{event.location}}</li>
+                <li>{{event.description}}</li>
+                <li>Is repeat event: {% if event.is_recurring == True %}
+                    ✅
+                    {% else %}
+                    ❌
+                    {% endif %}</li>
+                <br>
+            </ul>
+            {% endfor %}
+        </div>
+        <div class="input-wrapper">
+            <form action="/events" method="POST" class="form">
+
+                <label for="name-title">Events name:</label>
+                <input type="text" id="name-title" name="name" required>
+
+                <label for="date-title">Events date:</label>
+                <input type="date" id="date-title" name="date" required pattern="\d{4}-\d{2}-\d{2}">
+
+                <label for="number-guests-title">Number of guests:</label>
+                <input type="text" id="number-guests-title" name="number_of_guests" required>
+
+                <label for="location-title">Event location:</label>
+                <input type="text" id="location-title" name="location" required>
+
+                <label for="description-title">Event description:</label>
+                <input type="text" id="description-title" name="description" required>
+
+                <label for="is_recurring">Is the event recurring:</label>
+                <select name="is_recurring" id="is_recurring">
+                    <option value="" disabled selected>Please select an option</option>
+                    <option value="True">Yes</option>
+                    <option value="False">No</option>
+                </select>
+
+                <button>Submit</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
+{% endblock %}

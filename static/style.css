@@ -1,0 +1,67 @@
+:root {
+    --Blue: #373E98
+}
+
+body {
+    color: white;
+    margin: 0 auto;
+    padding: 0;
+    background: var(--Blue);
+}
+
+header {
+    margin: 0;
+    padding: 0;
+}
+
+.input-wraper {
+    display: flex;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin-left: 20px;
+}
+
+.event-wrapper{
+    width: 1000px;
+    display: flex;
+}
+
+.box {
+    width: 30vw;
+}
+
+nav {
+    width: 100vw;
+    height: 50px;
+    background: var(--Blue);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-radius: 0px 0px 7px 7px;
+    border-bottom: 3px solid white;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+}
+
+nav ul li {
+    padding: 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+
+.events-boxes {
+    border: 1px solid white;
+    border-radius: 5px;    
+}
